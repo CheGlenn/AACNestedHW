@@ -2,6 +2,14 @@ import structures.AssociativeArray;
 import structures.KeyNotFoundException;
 import java.util.List;
 
+/*
+ * @author Che Glenn
+ * Date: October 13
+ * 
+ * AACCategory represent a single category of items in the AAC. It stores the mapping between the image location and the text that should be spoken and the name of the category. 
+ * 
+ */
+
 public class AACCategory<K,V>{
 
   /*
@@ -24,7 +32,6 @@ public class AACCategory<K,V>{
    }
 
    public AACCategory(){
-
    }
    
 
@@ -46,10 +53,8 @@ public class AACCategory<K,V>{
   /*
    * Returns an array of all the images in the category
    */
-  public String[] getImages() throws KeyNotFoundException{
+  public String[] getImages(){
  
-
-    
     List<String> imgs = this.categories.returnKeys(); //list to store keys 
     String[] allImages = imgs.toArray(new String[imgs.size()]);         //save list to String array
  
@@ -67,7 +72,7 @@ public class AACCategory<K,V>{
   /*
    * Determines if the provided images is stored in the category
    */
-  public Boolean hasImage(String imageLoc) throws KeyNotFoundException{
+  public Boolean hasImage(String imageLoc){
     return this.categories.hasKey(imageLoc);
   }
   
