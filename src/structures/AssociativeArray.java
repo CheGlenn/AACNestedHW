@@ -191,16 +191,16 @@ public class AssociativeArray<K, V> {
    * Return a List of all keys in array
    */
   public List<K> returnKeys(){
-    List<K> keysArray = new ArrayList<>(); //creates an empty list
+    List<K> keysList = new ArrayList<>(); //creates an empty list
 
     
     for(int i = 0; i < this.size(); i++){ //loop through aa
    
-        keysArray.add(pairs[i].key);  // add each key in KV pair
+        keysList.add(pairs[i].key);  // add each key in KV pair
   
     } //for
 
-    return keysArray;
+    return keysList;
   }
 
   // +-----------------+---------------------------------------------

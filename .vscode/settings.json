@@ -1,7 +1,8 @@
 {
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "c:\\Users\\chegl\\Downloads\\junit-platform-console-standalone-1.10.0.jar"
+        "c:\\Users\\chegl\\Downloads\\junit-platform-console-standalone-1.10.0.jar",
+        "/home/glennche/Downloads/junit-platform-console-standalone-1.10.0.jar"
     ],
     "java.project.sourcePaths": [
         "src"

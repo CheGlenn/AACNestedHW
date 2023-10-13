@@ -1,18 +1,32 @@
 import structures.AssociativeArray;
-import structures.KVPair;
 import structures.KeyNotFoundException;
-import java.util.ArrayList;
 import java.util.List;
 
-public class AACCategory<K,V> extends AssociativeArray{
+public class AACCategory<K,V>{
+
+  /*
+   * FIELDS
+   */
 
   AssociativeArray<String,String> categories = new AssociativeArray<>(); //array for categories
 
-  int count = categories.size(); //num of categories
-
   String name; //name of current category
 
-  KVPair<K,V> pairs[]; //pairs of keys (categories) and values (img assoc)
+
+
+
+  /*
+   * CONSTRUCTOR 
+   */
+
+   public AACCategory(String name){
+    this.name = name;
+   }
+
+   public AACCategory(){
+
+   }
+   
 
 
   /*
@@ -20,26 +34,41 @@ public class AACCategory<K,V> extends AssociativeArray{
    */
   public void addItem(String imageLoc, String text){
     this.categories.set(imageLoc, text);
-    count = this.categories.size();
   }
 
   /*
    * Returns the name of the category
    */
-  public String getCategory(String category) throws KeyNotFoundException{
-    this.name = this.categories.get(category);
+  public String getCategory(){
     return this.name;
   }
 
   /*
    * Returns an array of all the images in the category
    */
-  public String[] getImages(String category) throws KeyNotFoundException{
-    List<String> imgs = this.categories.returnKeys(); //list to store keys 
+  public String[] getImages() throws KeyNotFoundException{
+ 
 
-    String[] allImages = imgs.toArray(new String[imgs.size()]); //save list to String array
+    
+    List<String> imgs = this.categories.returnKeys(); //list to store keys 
+    String[] allImages = imgs.toArray(new String[imgs.size()]);         //save list to String array
+ 
     return allImages; // return string array
     
   } 
+
+  /*
+   * Returns the text associated with the given image loc in this category
+   */
+  public String getText(String imageLoc) throws KeyNotFoundException{
+    return this.categories.get(imageLoc);
+  }
+
+  /*
+   * Determines if the provided images is stored in the category
+   */
+  public Boolean hasImage(String imageLoc) throws KeyNotFoundException{
+    return this.categories.hasKey(imageLoc);
+  }
   
 }

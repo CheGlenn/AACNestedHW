@@ -39,11 +39,11 @@ public class AssociativeArrayExperiments {
   public static void experimentStringsToStrings(PrintWriter pen) {
     AssociativeArray<String,String> s2s = 
       new ReportingAssociativeArray<String,String>("s2s", pen);
-    s2s.size();
+    //s2s.size();
     s2s.set("a", "apple");
-    s2s.size();
+    //s2s.size();
     s2s.set("A", "aardvark");
-    s2s.size();
+    //s2s.size(); 
     s2s.returnKeys();
 
     
