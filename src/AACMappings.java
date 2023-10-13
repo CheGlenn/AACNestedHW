@@ -30,12 +30,19 @@ public class AACMappings {
 
         while (sc.hasNext()){
           String line = sc.nextLine();
-          line.split(" ");
+          String[] lineArr = line.split(" ");
 
-          if(line.charAt(0) == '<'){
-            
+          if(line.charAt(0) != '>'){
+           topCategory.addItem(lineArr[0].toString(), lineArr[1].toString());
+          }
+          else{
+            currentCategory.addItem(lineArr[0].toString(), lineArr[1].toString());
           }
         }
+
+        try{
+          sc.close();
+        } catch (Exception e) {}
       } catch (Exception e) {}
     }
 
