@@ -203,6 +203,19 @@ public class AssociativeArray<K, V> {
     return keysList;
   }
 
+  /*
+   * return all values in KV Pair
+   */
+  public List<V> returnValues(){
+    List<V> valuesList = new ArrayList<>(); //create empty list
+
+    for(int i = 0; i < this.size(); i++){ //loop through aa
+      valuesList.add(pairs[i].value); //add each value in KV Pair
+    } //for
+
+    return valuesList;
+  }
+
   // +-----------------+---------------------------------------------
   // | Private Methods |
   // +-----------------+
